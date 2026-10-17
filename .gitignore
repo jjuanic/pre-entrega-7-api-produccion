@@ -1,0 +1,27 @@
+# Secretos
+.env
+
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+
+# Editor / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Logs y corridas locales (la evidencia de la entrega está en resultados/ y screenshots/)
+logs/

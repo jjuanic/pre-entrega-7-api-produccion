@@ -1,0 +1,36 @@
+# Python 3.12+ (probado con 3.14 local y 3.12 en Docker)
+
+# --- API y cola ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+redis>=5.2                      # redis.asyncio: estado de jobs + cola
+httpx>=0.27                     # cliente de la prueba de carga y de los tests
+
+# --- Orquestador multi-agente (Módulo 6) ---
+langgraph>=1.0
+langgraph-checkpoint-redis>=0.5 # AsyncRedisSaver (requiere Redis 8 / Redis Stack)
+langchain>=1.0                  # create_agent
+langchain-core>=1.0
+langchain-google-genai>=4.0
+langchain-openai>=1.0
+langchain-anthropic>=1.0
+pydantic>=2.7
+python-dotenv>=1.0
+
+# --- Herramienta del Investigador: RAG híbrido de la Pre-entrega 4 ---
+pinecone>=7.0
+langchain-classic>=1.0
+langchain-community>=0.4
+langchain-text-splitters>=1.0
+rank_bm25>=0.2.2
+tiktoken>=0.7
+pypdf>=5.0
+
+# --- Observabilidad (Módulo 7) ---
+arize-phoenix-otel>=0.10        # register(): TracerProvider + exporter OTLP hacia Phoenix
+openinference-instrumentation-langchain>=0.1.40
+langsmith>=0.3                  # alternativa: OBSERVABILIDAD=langsmith
+
+# --- Tests ---
+pytest>=8
+fakeredis>=2.26

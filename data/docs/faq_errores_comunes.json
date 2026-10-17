@@ -1,0 +1,49 @@
+{
+  "title": "FAQ — Errores comunes de Python y cómo resolverlos",
+  "category": "troubleshooting",
+  "library": "python",
+  "language": "es",
+  "tags": ["errores", "debugging", "faq"],
+  "entries": [
+    {
+      "title": "RuntimeError: asyncio.run() cannot be called from a running event loop",
+      "tags": ["asyncio", "jupyter"],
+      "content": "Este error aparece al llamar a asyncio.run() cuando ya hay un event loop corriendo en el mismo hilo. El caso más común es Jupyter o Google Colab, que ejecutan las celdas dentro de su propio event loop. Solución: en un notebook, usar directamente `await main()` en la celda en lugar de `asyncio.run(main())`. En una aplicación, llamar a asyncio.run() una sola vez en el punto de entrada y, dentro del código asíncrono, usar `await` o `asyncio.create_task()` en lugar de crear loops nuevos. Como último recurso existe el paquete externo nest_asyncio, pero esconde problemas de diseño."
+    },
+    {
+      "title": "Argumentos por defecto mutables",
+      "tags": ["funciones", "listas", "bug"],
+      "content": "Definir `def agregar(item, lista=[])` es un bug clásico: el valor por defecto se evalúa una sola vez, al definir la función, así que todas las llamadas comparten la misma lista y los elementos se acumulan entre llamadas. La forma correcta es usar None como centinela: `def agregar(item, lista=None):` y dentro `if lista is None: lista = []`. Lo mismo vale para diccionarios y sets. En dataclasses el problema se evita con `field(default_factory=list)`, y de hecho el decorador lanza ValueError si se usa una lista como default directo."
+    },
+    {
+      "title": "ModuleNotFoundError: No module named ...",
+      "tags": ["imports", "entornos virtuales", "pip"],
+      "content": "Python no encuentra el paquete en el entorno que está ejecutando el script. Causas típicas: el paquete se instaló en otro intérprete o en otro entorno virtual, el entorno virtual no está activado, o el nombre de importación difiere del nombre en pip (por ejemplo, se instala `python-dotenv` pero se importa `dotenv`; se instala `pypdf` y se importa `pypdf`). Diagnóstico: `python -c \"import sys; print(sys.executable)\"` muestra qué intérprete se usa. Instalar siempre con `python -m pip install paquete` garantiza que se instale en ese mismo intérprete."
+    },
+    {
+      "title": "ImportError por importación circular",
+      "tags": ["imports", "arquitectura"],
+      "content": "Si el módulo a importa a b y b importa a a, Python puede lanzar `ImportError: cannot import name 'X' from partially initialized module`. Ocurre porque uno de los módulos todavía no terminó de ejecutarse cuando el otro intenta usar sus nombres. Soluciones: mover el código compartido a un tercer módulo del que dependan ambos, mover la importación dentro de la función que la usa (importación diferida), o, si la importación solo se necesita para anotaciones de tipos, protegerla con `if TYPE_CHECKING:` del módulo typing."
+    },
+    {
+      "title": "UnicodeDecodeError al leer archivos",
+      "tags": ["encoding", "archivos", "windows"],
+      "content": "Mensajes como `UnicodeDecodeError: 'charmap' codec can't decode byte` aparecen cuando se lee un archivo con una codificación distinta de la que tiene. En Windows, `open()` sin el parámetro encoding usa la codificación regional (generalmente cp1252), mientras que la mayoría de los archivos modernos están en UTF-8. La solución es indicar siempre `encoding=\"utf-8\"` al abrir archivos de texto, tanto con open() como con Path.read_text(). Desde Python 3.15 UTF-8 es el modo por defecto, y en versiones anteriores se puede forzar con la variable de entorno PYTHONUTF8=1."
+    },
+    {
+      "title": "RecursionError: maximum recursion depth exceeded",
+      "tags": ["recursion", "rendimiento"],
+      "content": "Python limita la profundidad de la pila de llamadas (por defecto alrededor de 1000 niveles) para evitar un desbordamiento del intérprete. Suele indicar una recursión sin caso base correcto, o un algoritmo recursivo aplicado a una entrada muy grande. Soluciones: revisar el caso base, convertir la recursión en un bucle con una pila explícita, o memoizar con functools.lru_cache para evitar recalcular subproblemas. Aumentar el límite con sys.setrecursionlimit() es posible pero riesgoso: puede hacer que el proceso termine abruptamente."
+    },
+    {
+      "title": "TypeError: unhashable type: 'list'",
+      "tags": ["diccionarios", "sets", "cache"],
+      "content": "Las claves de un diccionario, los elementos de un set y los argumentos de una función decorada con lru_cache deben ser hashables (inmutables). Una lista o un diccionario no lo son. Soluciones: convertir la lista a tupla (`tuple(mi_lista)`), un set a frozenset, o un diccionario a una tupla de pares ordenados. Para objetos propios, una dataclass con frozen=True es hashable automáticamente."
+    },
+    {
+      "title": "KeyError al acceder a un diccionario",
+      "tags": ["diccionarios"],
+      "content": "Se lanza KeyError cuando se accede con corchetes a una clave que no existe. Alternativas según el caso: `d.get(clave, valor_por_defecto)` devuelve un valor por defecto sin error; `clave in d` permite comprobar antes de acceder; `d.setdefault(clave, [])` inserta un valor si falta; y `collections.defaultdict(list)` crea automáticamente el valor por defecto en el primer acceso. Al parsear JSON de una API externa conviene validar la estructura con Pydantic en lugar de encadenar accesos con corchetes."
+    }
+  ]
+}

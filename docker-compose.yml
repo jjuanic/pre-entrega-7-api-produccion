@@ -1,0 +1,55 @@
+# Levanta todo el sistema:  docker compose up --build
+#   API      http://localhost:8000/docs
+#   Phoenix  http://localhost:6006
+#   Redis    localhost:6379
+services:
+  redis:
+    # Redis 8 trae RedisJSON y el motor de búsqueda (RediSearch), que usa AsyncRedisSaver.
+    image: redis:8
+    command: ["redis-server", "--appendonly", "yes"]  # AOF: el estado sobrevive a un reinicio
+    ports: ["6379:6379"]
+    volumes: [redis-data:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  phoenix:
+    image: arizephoenix/phoenix:version-20.23.0   # misma versión que las capturas
+    environment:
+      PHOENIX_WORKING_DIR: /mnt/data
+    ports:
+      - "6006:6006"   # UI + colector OTLP/HTTP (/v1/traces)
+      - "4317:4317"   # colector OTLP/gRPC
+    volumes: [phoenix-data:/mnt/data]
+
+  api:
+    build: .
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    env_file: .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      PHOENIX_COLLECTOR_ENDPOINT: http://phoenix:6006
+      WORKER_EMBEBIDO: "false"
+    ports: ["8000:8000"]
+    depends_on:
+      redis: {condition: service_healthy}
+      phoenix: {condition: service_started}
+
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    env_file: .env
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      PHOENIX_COLLECTOR_ENDPOINT: http://phoenix:6006
+      WORKER_NOMBRE: worker-1
+    depends_on:
+      redis: {condition: service_healthy}
+      phoenix: {condition: service_started}
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+  phoenix-data:

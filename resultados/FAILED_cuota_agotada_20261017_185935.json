@@ -1,0 +1,143 @@
+{
+  "generado": "2026-10-17T18:59:35",
+  "url": "http://localhost:8000",
+  "resumen": {
+    "n": 5,
+    "ok": 0,
+    "pared_total_s": 307.77,
+    "post_ms_p50": 62.7,
+    "post_ms_p95": 72.1,
+    "total_s_p50": 0.0,
+    "total_s_p95": 0.0,
+    "worker_s_p50": 0.0,
+    "worker_s_p95": 0.0,
+    "tokens_promedio": 780,
+    "costo_estimado_promedio_usd": 0.00091,
+    "costo_estimado_total_usd": 0.00456
+  },
+  "jobs": [
+    {
+      "indice": 1,
+      "job_id": "36c499b82f234029b5e0a83cd08537c0",
+      "status": "FAILED",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "FAILED"
+      ],
+      "publicar": true,
+      "latencia_post_ms": 74.1,
+      "latencia_total_s": 306.19,
+      "ejecucion_worker_s": 304.883,
+      "uso": {
+        "tokens_entrada": 479,
+        "tokens_salida": 329,
+        "tokens_totales": 808,
+        "costo_estimado_usd": 0.000966,
+        "modelos": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": "langchain_google_genai.chat_models.GoogleRateLimitError: Error calling model 'gemini-flash-latest' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 2h21.349833665s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7221s'}]}}\nDuring task with name 'sintesis' and id '82826667-3821-45b9-bd29-8b6bc0e0a2cc'",
+      "respuesta": ""
+    },
+    {
+      "indice": 2,
+      "job_id": "d3881daaa9f14bd69a74b9075d401724",
+      "status": "FAILED",
+      "estados": [
+        "RUNNING",
+        "FAILED"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 13.7,
+      "latencia_total_s": 307.77,
+      "ejecucion_worker_s": 305.997,
+      "uso": {
+        "tokens_entrada": 471,
+        "tokens_salida": 301,
+        "tokens_totales": 772,
+        "costo_estimado_usd": 0.000894,
+        "modelos": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": "langchain_google_genai.chat_models.GoogleRateLimitError: Error calling model 'gemini-flash-latest' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 2h20.327140273s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7220s'}]}}\nDuring task with name 'sintesis' and id '63a72b50-b51d-1ae7-37ff-2ef006a7de14'",
+      "respuesta": ""
+    },
+    {
+      "indice": 3,
+      "job_id": "7874a7261b8f483bb01786fef61b2824",
+      "status": "FAILED",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "FAILED"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 64.3,
+      "latencia_total_s": 298.14,
+      "ejecucion_worker_s": 297.418,
+      "uso": {
+        "tokens_entrada": 461,
+        "tokens_salida": 280,
+        "tokens_totales": 741,
+        "costo_estimado_usd": 0.000838,
+        "modelos": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": "langchain_google_genai.chat_models.GoogleRateLimitError: Error calling model 'gemini-flash-latest' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 2h28.811067983s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7228s'}]}}\nDuring task with name 'sintesis' and id '822ef375-68c3-1e53-df1f-a6cfd0bafbf7'",
+      "respuesta": ""
+    },
+    {
+      "indice": 4,
+      "job_id": "96d0befa9dc74f7bb6e9d0cb71e49427",
+      "status": "FAILED",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "FAILED"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 62.7,
+      "latencia_total_s": 306.18,
+      "ejecucion_worker_s": 305.048,
+      "uso": {
+        "tokens_entrada": 469,
+        "tokens_salida": 336,
+        "tokens_totales": 805,
+        "costo_estimado_usd": 0.000981,
+        "modelos": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": "langchain_google_genai.chat_models.GoogleRateLimitError: Error calling model 'gemini-flash-latest' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 2h21.182359964s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7221s'}]}}\nDuring task with name 'sintesis' and id '58f080e4-d95c-83f6-c33c-82c0c092da16'",
+      "respuesta": ""
+    },
+    {
+      "indice": 5,
+      "job_id": "22eaf21e0cbd44ca87e6c8a7f202cbb5",
+      "status": "FAILED",
+      "estados": [
+        "RUNNING",
+        "FAILED"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 35.6,
+      "latencia_total_s": 245.83,
+      "ejecucion_worker_s": 244.424,
+      "uso": {
+        "tokens_entrada": 476,
+        "tokens_salida": 296,
+        "tokens_totales": 772,
+        "costo_estimado_usd": 0.000883,
+        "modelos": [
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": "langchain_google_genai.chat_models.GoogleRateLimitError: Error calling model 'gemini-flash-latest' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\nPlease retry in 2h1m21.89321996s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.8-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7281s'}]}}\nDuring task with name 'sintesis' and id 'cf08acce-23ac-4e2f-ef12-89013659c9f8'",
+      "respuesta": ""
+    }
+  ]
+}

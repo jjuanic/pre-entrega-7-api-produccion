@@ -1,0 +1,160 @@
+{
+  "generado": "2026-10-17T19:13:30",
+  "url": "http://localhost:8000",
+  "resumen": {
+    "n": 5,
+    "ok": 5,
+    "pared_total_s": 199.3,
+    "post_ms_p50": 16.9,
+    "post_ms_p95": 40.6,
+    "total_s_p50": 177.19,
+    "total_s_p95": 195.28,
+    "worker_s_p50": 175.6,
+    "worker_s_p95": 194.59,
+    "tokens_promedio": 9466,
+    "costo_estimado_promedio_usd": 0.00631,
+    "costo_estimado_total_usd": 0.03156
+  },
+  "jobs": [
+    {
+      "indice": 1,
+      "job_id": "e04d3fd5a85342cf9a405408509a6174",
+      "status": "DONE",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "AWAITING_APPROVAL",
+        "DONE"
+      ],
+      "publicar": true,
+      "latencia_post_ms": 46.4,
+      "latencia_total_s": 106.78,
+      "ejecucion_worker_s": 102.854,
+      "uso": {
+        "tokens_entrada": 7887,
+        "tokens_salida": 2349,
+        "tokens_totales": 10236,
+        "costo_estimado_usd": 0.008239,
+        "modelos": [
+          "gemini-3-flash-preview",
+          "gemini-3.1-flash-lite",
+          "gemini-3.5-flash-lite",
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": null,
+      "respuesta": "Para una máquina de 8 núcleos realizando 240 llamadas HTTP de 0,5 segundos, el `ThreadPoolExecutor` sin `max_workers` utiliza 12 hilos, reduciendo el tiempo de 120 segundos a 10 segundos y logrando que el proceso sea 12 veces más rápido.\n\n* Si no se indica `max_workers`, `ThreadPoolExecutor` usa `mi"
+    },
+    {
+      "indice": 2,
+      "job_id": "6d8629c3f337448ba7e594cdab4437e0",
+      "status": "DONE",
+      "estados": [
+        "RUNNING",
+        "DONE"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 12.1,
+      "latencia_total_s": 199.3,
+      "ejecucion_worker_s": 198.512,
+      "uso": {
+        "tokens_entrada": 7659,
+        "tokens_salida": 1158,
+        "tokens_totales": 8817,
+        "costo_estimado_usd": 0.005193,
+        "modelos": [
+          "gemini-3-flash-preview",
+          "gemini-3.1-flash-lite",
+          "gemini-3.5-flash-lite",
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": null,
+      "respuesta": "El tamaño máximo por defecto de `functools.lru_cache` es 128, lo que permite guardar como máximo un 12.8% de los resultados si la función recibe 1000 argumentos distintos, descartando los 872 restantes.\n\n* El valor por defecto del parámetro `maxsize` en el decorador `functools.lru_cache` es 128 (fun"
+    },
+    {
+      "indice": 3,
+      "job_id": "21f96a94a6ef468c96e80641f961e61e",
+      "status": "DONE",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "DONE"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 16.1,
+      "latencia_total_s": 179.2,
+      "ejecucion_worker_s": 178.899,
+      "uso": {
+        "tokens_entrada": 7374,
+        "tokens_salida": 1424,
+        "tokens_totales": 8798,
+        "costo_estimado_usd": 0.005772,
+        "modelos": [
+          "gemini-3-flash-preview",
+          "gemini-3.1-flash-lite",
+          "gemini-3.5-flash-lite",
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": null,
+      "respuesta": "ProcessPoolExecutor utiliza por defecto la cantidad de CPUs disponibles en la máquina cuando no se indica el parámetro `max_workers` (concurrent_futures.md). A continuación, se detalla la estimación de tiempos para las 100 tareas CPU-bound en una máquina de 8 núcleos.\n\n* **Cantidad de procesos por d"
+    },
+    {
+      "indice": 4,
+      "job_id": "6f88985591ca4d91bc8c52d441eeb24b",
+      "status": "DONE",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "DONE"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 16.9,
+      "latencia_total_s": 173.16,
+      "ejecucion_worker_s": 173.033,
+      "uso": {
+        "tokens_entrada": 8261,
+        "tokens_salida": 1347,
+        "tokens_totales": 9608,
+        "costo_estimado_usd": 0.005846,
+        "modelos": [
+          "gemini-3-flash-preview",
+          "gemini-3.1-flash-lite",
+          "gemini-3.5-flash-lite",
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": null,
+      "respuesta": "El modo debug de `asyncio` considera lentos a los callbacks que bloquean el event loop por más de 100 ms por defecto (asyncio.md). Con 40 callbacks de 250 ms cada uno, el tiempo total de bloqueo es de 10,000 ms y cada callback supera el umbral en un factor de 2.5 (asumiendo ejecución secuencial y co"
+    },
+    {
+      "indice": 5,
+      "job_id": "32bbfe6e74d14a789e6356f2dc913ee0",
+      "status": "DONE",
+      "estados": [
+        "PENDING",
+        "RUNNING",
+        "DONE"
+      ],
+      "publicar": false,
+      "latencia_post_ms": 17.5,
+      "latencia_total_s": 177.19,
+      "ejecucion_worker_s": 175.601,
+      "uso": {
+        "tokens_entrada": 8257,
+        "tokens_salida": 1614,
+        "tokens_totales": 9871,
+        "costo_estimado_usd": 0.006512,
+        "modelos": [
+          "gemini-3-flash-preview",
+          "gemini-3.1-flash-lite",
+          "gemini-3.5-flash-lite",
+          "gemini-3.8-flash"
+        ]
+      },
+      "error": null,
+      "respuesta": "Con la configuración por defecto del módulo `logging`, tu aplicación va a mostrar un total de 360 mensajes por hora y 8.640 mensajes por día, ya que solo se visualizan las advertencias y los errores (logging.md).\n\n* **Nivel por defecto:** El nivel de severidad configurado por defecto para el logger "
+    }
+  ]
+}

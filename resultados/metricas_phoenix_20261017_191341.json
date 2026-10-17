@@ -1,0 +1,144 @@
+{
+  "proyecto": "orquestador-agentes",
+  "ventana_utc": {
+    "start": "2026-10-17T22:09:40.700000+00:00",
+    "end": "2026-10-17T22:14:00+00:00"
+  },
+  "origen_ventana": "carga_20261017_191330.json",
+  "phoenix": {
+    "trazas": 6,
+    "latencia_p50_s": 174.31,
+    "latencia_p95_s": 193.6,
+    "latencia_p99_s": 197.52,
+    "tokens_total": 47330.0,
+    "tokens_entrada": 39438.0,
+    "tokens_salida": 7892.0,
+    "costo_total_usd": 0.039636,
+    "costo_entrada_usd": 0.018534,
+    "costo_salida_usd": 0.021102
+  },
+  "por_ejecucion": {
+    "ejecuciones_ok": 5,
+    "costo_promedio_usd": 0.007927,
+    "costo_min_usd": 0.00662,
+    "costo_max_usd": 0.010594,
+    "latencia_p50_s": 175.59,
+    "latencia_p95_s": 194.58
+  },
+  "por_nodo": {
+    "investigador": {
+      "invocaciones": 5,
+      "tokens": 19438.0,
+      "costo_usd": 0.017861,
+      "latencia_ms": 374582.195,
+      "pct_tokens": 41.1,
+      "pct_latencia": 45.2
+    },
+    "supervisor": {
+      "invocaciones": 15,
+      "tokens": 12990.0,
+      "costo_usd": 0.013205,
+      "latencia_ms": 373945.043,
+      "pct_tokens": 27.4,
+      "pct_latencia": 45.1
+    },
+    "analista": {
+      "invocaciones": 5,
+      "tokens": 11118.0,
+      "costo_usd": 0.004997,
+      "latencia_ms": 73839.775,
+      "pct_tokens": 23.5,
+      "pct_latencia": 8.9
+    },
+    "sintesis": {
+      "invocaciones": 5,
+      "tokens": 3784.0,
+      "costo_usd": 0.003573,
+      "latencia_ms": 6059.408,
+      "pct_tokens": 8.0,
+      "pct_latencia": 0.7
+    },
+    "aprobacion_humana": {
+      "invocaciones": 2,
+      "tokens": 0,
+      "costo_usd": 0.0,
+      "latencia_ms": 6.951,
+      "pct_tokens": 0.0,
+      "pct_latencia": 0.0
+    },
+    "evaluar_riesgo": {
+      "invocaciones": 5,
+      "tokens": 0,
+      "costo_usd": 0.0,
+      "latencia_ms": 19.348,
+      "pct_tokens": 0.0,
+      "pct_latencia": 0.0
+    },
+    "validador": {
+      "invocaciones": 10,
+      "tokens": 0,
+      "costo_usd": 0.0,
+      "latencia_ms": 16.841,
+      "pct_tokens": 0.0,
+      "pct_latencia": 0.0
+    },
+    "publicar": {
+      "invocaciones": 1,
+      "tokens": 0,
+      "costo_usd": 0.0,
+      "latencia_ms": 3.491,
+      "pct_tokens": 0.0,
+      "pct_latencia": 0.0
+    }
+  },
+  "ejecuciones": [
+    {
+      "trace_id": "fe5d7e81f3bb171f0d96ef3ccc3871b3",
+      "segmento": "run",
+      "status": "OK",
+      "latencia_s": 102.7,
+      "costo_usd": 0.010594,
+      "tokens": 10236.0
+    },
+    {
+      "trace_id": "0ac48356613048a022a502be2fcba377",
+      "segmento": "resume",
+      "status": "OK",
+      "latencia_s": 0.02,
+      "costo_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "trace_id": "b06e9957662ddbf599ae6468d0257420",
+      "segmento": "run",
+      "status": "OK",
+      "latencia_s": 173.02,
+      "costo_usd": 0.007615,
+      "tokens": 9608.0
+    },
+    {
+      "trace_id": "f17be1620bef71f1bb296d5988dc9c67",
+      "segmento": "run",
+      "status": "OK",
+      "latencia_s": 175.59,
+      "costo_usd": 0.007875,
+      "tokens": 9871.0
+    },
+    {
+      "trace_id": "4c8a2b3606021206a357bc244fd32c1b",
+      "segmento": "run",
+      "status": "OK",
+      "latencia_s": 178.89,
+      "costo_usd": 0.006932,
+      "tokens": 8798.0
+    },
+    {
+      "trace_id": "b8c1ede672e9245d521fa4cc3bee46ea",
+      "segmento": "run",
+      "status": "OK",
+      "latencia_s": 198.5,
+      "costo_usd": 0.00662,
+      "tokens": 8817.0
+    }
+  ]
+}
